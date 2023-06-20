@@ -15,6 +15,10 @@ Here, I built a Rest API through a Laravel application with Sanctum authenticati
 ## API methods and responses
 
 The methods are called through Postman and the responses are given below:
+-Post method:
+ -register
+ -login
+ -display all products
 
 ## Laravel Sponsors
 

@@ -1,10 +1,6 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-<!-- <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a> -->
 Crud Operations with Laravel Rest API.
 </p>
 
@@ -12,46 +8,56 @@ Crud Operations with Laravel Rest API.
 
 Here, I built a Rest API through a Laravel application with Sanctum authentication. I used Composer and Postman tool for testing the Rest API.
 
-## API methods and responses
 
-The methods are called through Postman and the responses are given below:
--Post method:
- -register
- -login
- -display all products
+## Methods and Responses of Rest API
 
-## Laravel Sponsors
+- Post method:<br>
+    - register: For a user registration an API has to be called through postman.<br>
+    **API call:** `../api/register`<br>
+    resposne: If the credentials `name`, `email`, `password` and `confirme_password`is correct then postman will show success. If the credentials are wrong postman will show fail response.<br>
+    - login: After registration user needs to login to the system.<br>
+    **API call:** `../api/login`<br>
+     If the credentials `email` and `password` are correct postman will show `success` response. If the credentials are wrong, postman will show `fail` response.
+    - Add Product: Products can be added to the database.<br>
+    **API call:** `../api/products`<br>
+    Credentials are `name` and `descriptions`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+    
+- Get method: <br>
+    - Show all products: This API will show all the products of the database.<br>
+    **API call:** `../api/products`
+    - Show products with id: This API will show individual product with unique id.<br>
+    **API call:** `../api/products/2`
+    - Logout: User can logout through this API.
+    **API call:** `../api/logout`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Put method: <br>
+    - Update products: Through this API product's name or description can be updated.<br>
+    **API call:** `../api/products/1`
+- Delete method: <br>
+    - Delete products: Any products can be deleted through this API. <br>
+    **API call:** `../api/products/2`<br>
+    If any id is given that is not in the database it will show "Product not found".
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Project Installation:
 
-## Code of Conduct
+In order to run this project you need to run the certain commands in your terminal:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+composer install
+```
+```
+cp .env.example .env
+```
+Set up your MySQL server and settings, as well as the database, in the.env file. Then run the project.
+```
+php artisan migrate
+```
+```
+php artisan serve
+```
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
